@@ -10,16 +10,16 @@ export default function Menu (props) {
                         props.setActiveView('home');
                     }} >Home</p>
                     <p className={'navigation-item'} onClick={() => {
-                        props.setActiveView('tester');
-                    }}>Tester</p>
-                    <p className={'navigation-item'} onClick={() => {
                         props.setActiveView('getting-started');
                     }}>Getting started</p>
                     <p className={'navigation-item'} onClick={() => {
                         props.setActiveView('features');
                     }}>Features</p>
                     <p className={'navigation-item'} onClick={() => {
-                        props.setActiveView('features');
+                        props.setActiveView('settings');
+                    }}>Settings</p>
+                    <p className={'navigation-item'} onClick={() => {
+                        props.setActiveView('road-map');
                     }}>Road Map</p>
                 </div>
             </header>

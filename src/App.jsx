@@ -4,20 +4,29 @@ import Menu from "./components/Menu";
 import TextArea from "./components/TextArea.jsx";
 import LogoLight from "./assets/metrics-logo_light.svg";
 import LogoDark from "./assets/metrics-logo_dark.svg";
-import Tester from "./components/Tester.jsx";
-import Sparkr from "./assets/SVG 2.1 | Original Sparkr.svg";
-import ProcessesImg from "./assets/processes-img.png";
-import NetworkInterfaceImg from "./assets/network-interface-img.png";
-import DiskDataImg from "./assets/disk-data-img.png";
-import DeviceManagementImg from "./assets/device-management-img.png";
-import SettingsImg from "./assets/settings-img.png";
-import FullScreenMetricsImg from "./assets/full-screen-metrics-img.png";
 import GettingStarted from "./components/GettingStarted.jsx";
+import Settings from "./components/Settings.jsx";
+import Sparkr from "./assets/SVG 2.1 | Original Sparkr.svg";
+import Ocean from "./assets/SVG 2.1 | Ocean Blues.svg";
+import Forest from "./assets/SVG 2.1 | Forest Green.svg";
+import Royal from "./assets/SVG 2.1 | Royal Purple.svg";
+import Berry from "./assets/SVG 2.1 | Berry red.svg";
+import Magenta from "./assets/SVG 2.1 | Sunset Magenta.svg";
+import Sunrise from "./assets/SVG 2.1 | orange sunrise.svg";
+import Teal from "./assets/SVG 2.1 | Teal Lagoon.svg";
+import Lavander from "./assets/SVG 2.1 | Lavander Mist.svg";
+import Minty from "./assets/SVG 2.1 | Minty Fresh.svg";
+import Sapphire from "./assets/SVG 2.1 | Midnight Sapphire.svg";
+import Crimson from "./assets/SVG 2.1 | Crimson Ember.svg";
+import Arctic from "./assets/SVG 2.1 | Arctic Cyan.svg";
+import Copper from "./assets/SVG 2.1 | Copper Flame.svg";
+import Emerald from "./assets/SVG 2.1 | Emerald Depths.svg";
+import Violet from "./assets/SVG 2.1 | Violet Storm.svg";
+import Features from "./components/Features.jsx";
+import Roadmap from "./components/Roadmap.jsx";
 
 export default function App() {
     const [logoImage, setLogoImage] = useState(() => Sparkr)
-
-    const [testerView, setTesterView] = useState('resources')
 
     const [activeView, setActiveView] = useState('home');
 
@@ -30,6 +39,169 @@ export default function App() {
         }
     });
 
+    const [themes, setThemes] = useState([
+        {
+            name: "Midnight Sapphire",
+            colour: {
+                secondary: "#2f5dff",
+                tertiary: "#001f99",
+                secondary75: "#2f5dff75",
+                tertiary75: "#001f9975",
+            },
+            logo: Sapphire,
+        },
+        {
+            name: "Crimson Ember",
+            colour: {
+                secondary: "#ff4d4d",
+                tertiary: "#b30000",
+                secondary75: "#ff4d4d75",
+                tertiary75: "#b3000075",
+            },
+            logo: Crimson,
+        },
+        {
+            name: "Arctic Cyan",
+            colour: {
+                secondary: "#42d7ff",
+                tertiary: "#0288a8",
+                secondary75: "#42d7ff75",
+                tertiary75: "#0288a875",
+            },
+            logo: Arctic,
+        },
+        {
+            name: "Copper Flame",
+            colour: {
+                secondary: "#ff7a42",
+                tertiary: "#b34700",
+                secondary75: "#ff7a4275",
+                tertiary75: "#b3470075",
+            },
+            logo: Copper,
+        },
+        {
+            name: "Emerald Depths",
+            colour: {
+                secondary: "#2ecc71",
+                tertiary: "#0b7a3e",
+                secondary75: "#2ecc7175",
+                tertiary75: "#0b7a3e75",
+            },
+            logo: Emerald,
+        },
+        {
+            name: "Violet Storm",
+            colour: {
+                secondary: "#9b42ff",
+                tertiary: "#4b0099",
+                secondary75: "#9b42ff75",
+                tertiary75: "#4b009975",
+            },
+            logo: Violet,
+        },
+        {
+            name: "Sparkr Original",
+            colour: {
+                secondary: "#FF8C42",
+                tertiary: "#CC5803",
+                secondary75: "#FF8C4275",
+                tertiary75: "#CC580375",
+            },
+            logo: Sparkr,
+        },
+        {
+            name: "Ocean Blues",
+            colour: {
+                secondary: "#4287f5",
+                tertiary: "#0349cc",
+                secondary75: "#4287f575",
+                tertiary75: "#0349cc75",
+            },
+            logo: Ocean,
+        },
+        {
+            name: "Forest Greens",
+            colour: {
+                secondary: "#42b883",
+                tertiary: "#0a7e4e",
+                secondary75: "#42b88375",
+                tertiary75: "#0a7e4e75",
+            },
+            logo: Forest,
+        },
+        {
+            name: "Royal Purples",
+            colour: {
+                secondary: "#8a42ff",
+                tertiary: "#5e03cc",
+                secondary75: "#8a42ff75",
+                tertiary75: "#5e03cc75",
+            },
+            logo: Royal,
+        },
+        {
+            name: "Berry Red",
+            colour: {
+                secondary: "#ff4270",
+                tertiary: "#cc0349",
+                secondary75: "#ff427075",
+                tertiary75: "#cc034975",
+            },
+            logo: Berry,
+        },
+        {
+            name: "Sunset Magenta",
+            colour: {
+                secondary: "#ff42a4",
+                tertiary: "#cc0377",
+                secondary75: "#ff42a475",
+                tertiary75: "#cc037775",
+            },
+            logo: Magenta,
+        },
+        {
+            name: "Golden Sunrise",
+            colour: {
+                secondary: "#ffb142",
+                tertiary: "#cc8403",
+                secondary75: "#ffb14275",
+                tertiary75: "#cc840375",
+            },
+            logo: Sunrise,
+        },
+        {
+            name: "Teal Lagoon",
+            colour: {
+                secondary: "#42f5e6",
+                tertiary: "#03cccc",
+                secondary75: "#42f5e675",
+                tertiary75: "#03cccc75",
+            },
+            logo: Teal,
+        },
+        {
+            name: "Lavender Mist",
+            colour: {
+                secondary: "#c742ff",
+                tertiary: "#7f03cc",
+                secondary75: "#c742ff75",
+                tertiary75: "#7f03cc75",
+            },
+            logo: Lavander,
+        },
+        {
+            name: "Minty Fresh",
+            colour: {
+                secondary: "#42f57a",
+                tertiary: "#03cc49",
+                secondary75: "#42f57a75",
+                tertiary75: "#03cc4975",
+            },
+            logo: Minty,
+        },
+    ]);
+
     const savedTheme = JSON.parse(localStorage.getItem("theme"));
 
 
@@ -37,13 +209,16 @@ export default function App() {
         if (savedTheme) {
             document.documentElement.style.setProperty("--secondary", savedTheme.colour.secondary);
             document.documentElement.style.setProperty("--tertiary", savedTheme.colour.tertiary);
+            document.documentElement.style.setProperty("--secondary-75", savedTheme.colour.secondary75);
+            document.documentElement.style.setProperty("--tertiary-75", savedTheme.colour.tertiary75);
 
-            document.documentElement.style.setProperty("--dm-tertiary", savedTheme.colour.tertiary)
-            document.documentElement.style.setProperty("--dm-secondary", savedTheme.colour.secondary)
-            // eslint-disable-next-line react-hooks/set-state-in-effect
-            setLogoImage(savedTheme.logo)
+            document.documentElement.style.setProperty("--dm-secondary", savedTheme.colour.secondary);
+            document.documentElement.style.setProperty("--dm-tertiary", savedTheme.colour.tertiary);
+            document.documentElement.style.setProperty("--dm-secondary-75", savedTheme.colour.secondary75);
+            document.documentElement.style.setProperty("--dm-tertiary-75", savedTheme.colour.tertiary75);
+            setLogoImage(savedTheme.logo);
         }
-    }, []);
+    }, [setLogoImage, savedTheme]);
 
     useEffect(() => {
         if (isDarkMode) {
@@ -54,7 +229,6 @@ export default function App() {
 
     return (
         <main>
-            {testerView !== 'fullScreen' &&
                 <>
                     <Menu setActiveView={setActiveView} activeView={activeView} logoImage={logoImage}/>
                     {activeView === 'home' && <section>
@@ -90,23 +264,6 @@ export default function App() {
                                     img: null,
                                     title: 'Real-Time Operational Visibility',
                                 }],
-                                    code: [{}]
-                                }}/>
-                                <TextArea data={{
-                                    text: [
-                                        {text: '- Run entirely on your own infrastructure with no external dependencies.\n' +
-                                                '\n' +
-                                                '- Keep your system data private and under your control.',
-                                            img: null,
-                                            title: 'Full Control, No SaaS Lock-In'
-                                        },
-                                        {
-                                            text: '- See CPU, memory, processes, network, and storage usage in real time.\n' +
-                                                '\n' +
-                                                '- Quickly identify resource bottlenecks and misbehaving processes.',
-                                            img: null,
-                                            title: 'Real-Time Operational Visibility',
-                                        }],
                                     code: [{}]
                                 }}/>
                                 <TextArea data={{
@@ -173,263 +330,18 @@ export default function App() {
                     }
                     </section>}
                 </>
-            }
             {activeView === 'getting-started' &&
                 <section>
                     <GettingStarted isDarkMode={isDarkMode}/>
                 </section>
             }
-            {activeView === 'tester' && <>
-            {testerView !== 'fullScreen' &&
-                <>
-                    <section>
-                        <h1>EmberMetrics Visual Interface Showcase: The User Experience</h1>
-                        <TextArea data={{
-                            text: [{
-                                text: "EmberMetrics transforms raw system data into an intelligent visual narrative that tells the story of your" +
-                                        " computer's performance in real time. This isn't just another monitoring tool - it's a visual translation layer that " +
-                                    "converts complex technical metrics into intuitive, actionable insights that anyone can understand.\n" +
-                                    "\n" +
-                                    "The interface serves as the central nervous system of the application, where data from multiple " +
-                                    "sources converges into a cohesive, comprehensible display. Each visual element is carefully designed not merely to present " +
-                                    "information, but to reveal patterns, highlight anomalies, and enable rapid decision-making. The dashboard acts as your digital co-pilot " +
-                                    "for system management, providing both high-level overviews for quick status checks and granular details for deep troubleshooting.",
-                                img: null
-                            }],
-                            code: []
-                        }}/>
-                    </section>
-                    <div className={'page-break'}></div>
-                </>}
-                <Tester logoImage={logoImage} setLogoImage={setLogoImage} activeView={testerView} setActiveView={setTesterView} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-            </>}
-            {activeView === 'features' &&<section>
-                <h1>Features</h1>
-                <TextArea data={{
-                    text: [{
-                        text: "EmberMetrics provides real-time system visibility and centralized device management through a lightweight, " +
-                            "self-hosted architecture. It is designed to deliver the information you need to understand system health, " +
-                            "diagnose performance issues, and manage multiple machines — without relying on external monitoring services."
-                    }],
-                    code: []
-                }}
-                />
-                <TextArea data={{
-                    text: [{
-                        title: 'Real-Time System Metrics',
-                        text: 'Get an up-to-date view of system performance across all monitored devices.\n' +
-                            '\n' +
-                            '- Per-core and total CPU usage\n' +
-                            '\n' +
-                            '- CPU temperature monitoring (where supported)\n' +
-                            '\n' +
-                            '- Memory usage and availability\n' +
-                            '\n' +
-                            '- Structured JSON output for reliable consumption\n' +
-                            '\n' +
-                            'Designed for fast refresh rates and low overhead, EmberMetrics focuses on delivering actionable system data in real time'
-                    }],
-                    code: [{
-                        code: null,
-                        language: null,
-                    }]
-                }}/>
-                <TextArea data={{
-                    text: [{
-                        title: 'Process & Resource Visibility',
-                        text: 'Identify resource-intensive workloads and troubleshoot performance issues quickly.\n' +
-                            '\n' +
-                            '- Top processes by CPU usage\n' +
-                            '\n' +
-                            '- Process ID, name, user, and memory usage\n' +
-                            '\n' +
-                            '- Designed to surface runaway or misbehaving processes\n' +
-                            '\n' +
-                            '- Optimized for operational insight rather than exhaustive process listings\n' +
-                            '\n' +
-                            'This allows you to quickly understand what is consuming resources and where performance is being impacted.',
-                        img: ProcessesImg
-                    }],
-                    code: [{
-                        code: null,
-                        language: null,
-                    }]
-                }}/>
-                <TextArea data={{
-                    text: [{
-                        title: 'Network Interface Monitoring',
-                        text: 'Maintain visibility into network configuration and activity.\n' +
-                            '\n' +
-                            '- Enumeration of network interfaces\n' +
-                            '\n' +
-                            '- MAC addresses and interface types\n' +
-                            '\n' +
-                            '- Default interface detection\n' +
-                            '\n' +
-                            '- IPv4 and IPv6 addresses\n' +
-                            '\n' +
-                            '- Transmitted and received data counters\n' +
-                            '\n' +
-                            'This helps with diagnosing connectivity issues and understanding network layout across systems.',
-                        img: NetworkInterfaceImg
-                    }],
-                    code: [{
-                        code: null,
-                        language: null,
-                    }]
-                }}/>
-                <TextArea data={{
-                    text: [{
-                        title: 'Storage & Disk Enumeration',
-                        text: 'Track storage devices and system layout.\n' +
-                            '\n' +
-                            '- Disk and drive detection\n' +
-                            '\n' +
-                            '- Device paths and interface types\n' +
-                            '\n' +
-                            '- Vendor and device metadata\n' +
-                            '\n' +
-                            '- Capacity reporting\n' +
-                            '\n' +
-                            '- Support for modern storage types such as NVMe\n' +
-                            '\n' +
-                            'Provides a clear view of available storage resources and system configuration.',
-                        img: DiskDataImg
-                    }],
-                    code: [{
-                        code: null,
-                        language: null,
-                    }]
-                }}/>
-                <TextArea data={{
-                    text: [{
-                        title: 'Multi-Device Management',
-                        text: 'Monitor and manage multiple systems from a single interface.\n' +
-                            '\n' +
-                            '- Register and manage remote devices\n' +
-                            '\n' +
-                            '- Centralized device list\n' +
-                            '\n' +
-                            '- Designed for both local and remote monitoring scenarios\n' +
-                            '\n' +
-                            '- Lightweight remote collectors with centralized visibility\n' +
-                            '\n' +
-                            'This enables a single control plane for small clusters, homelabs, and internal infrastructure.',
-                        img: DeviceManagementImg
-                    }],
-                    code: [{
-                        code: null,
-                        language: null,
-                    }]
-                }}/>
-                <TextArea data={{
-                    text: [{
-                        title: 'Structured Data for Dashboards & Automation',
-                        text: 'EmberMetrics is built around consistent, structured JSON output.\n' +
-                            '\n' +
-                            '- Predictable API responses\n' +
-                            '\n' +
-                            '- Designed for integration with custom dashboards\n' +
-                            '\n' +
-                            '- Suitable for automation and external tooling\n' +
-                            '\n' +
-                            '- Clear separation between data collection and presentation\n' +
-                            '\n' +
-                            'This makes EmberMetrics easy to extend and integrate into existing workflows.'
-                    }],
-                    code: [{
-                        code: null,
-                        language: null,
-                    }]
-                }}/>
-                <TextArea data={{
-                    text: [{
-                        title: 'UI & Accessibility Controls',
-                        text: 'Customize the dashboard experience to fit your environment.\n' +
-                            '\n' +
-                            '- Light and dark themes\n' +
-                            '\n' +
-                            '- Multiple predefined color themes\n' +
-                            '\n' +
-                            '- Adjustable global font sizing\n' +
-                            '\n' +
-                            '- Accessibility-focused layout considerations\n' +
-                            '\n' +
-                            'Designed for both desktop use and wallboard-style displays.',
-                        img: SettingsImg
-                    }],
-                    code: [{
-                        code: null,
-                        language: null,
-                    }]
-                }}/>
-                <TextArea data={{
-                    text: [{
-                        title: 'Fullscreen & Monitoring Displays',
-                        text: 'Support for focused monitoring setups.\n' +
-                            '\n' +
-                            '- Fullscreen dashboard mode\n' +
-                            '\n' +
-                            '- Suitable for wall displays and monitoring stations\n' +
-                            '\n' +
-                            '- Clean, distraction-free layout\n' +
-                            '\n' +
-                            '- Designed for continuous visibility\n' +
-                            '\n' +
-                            'Ideal for NOCs, server rooms, or dedicated monitoring screens.',
-                        img: FullScreenMetricsImg
-                    }],
-                    code: [{
-                        code: null,
-                        language: null,
-                    }]
-                }}/>
-                <TextArea data={{
-                    text: [{
-                        title: 'Lightweight & Self-Hosted by Design',
-                        text: 'Built to be simple to deploy and easy to operate.\n' +
-                            '\n' +
-                            '- Node.js-based collectors and APIs\n' +
-                            '\n' +
-                            '- No external databases required (current design)\n' +
-                            '\n' +
-                            '- JSON-based persistence\n' +
-                            '\n' +
-                            '- Designed for trusted and internal networks\n' +
-                            '\n' +
-                            'EmberMetrics prioritizes simplicity, control, and operational transparency.'
-                    }],
-                    code: [{
-                        code: null,
-                        language: null,
-                    }]
-                }}/>
-                <TextArea data={{
-                    text: [{
-                        title: 'Designed to Grow',
-                        text: 'EmberMetrics is actively evolving to support more advanced monitoring workflows.\n' +
-                            '\n' +
-                            '- Historical metrics storage\n' +
-                            '\n' +
-                            '- Threshold-based alerts and notifications\n' +
-                            '\n' +
-                            '- Authentication and access control\n' +
-                            '\n' +
-                            '- Role-based access management\n' +
-                            '\n' +
-                            '- Graphing and long-term trend visualization\n' +
-                            '\n' +
-                            '- Docker Compose-based deployments\n' +
-                            '\n' +
-                            'These capabilities are designed to extend EmberMetrics into a full observability and operations platform.'
-                    }],
-                    code: [{
-                        code: null,
-                        language: null,
-                    }]
-                }}/>
-
-            </section>}
+            {
+                activeView === 'features' && <Features />
+            }
+            {
+                activeView === 'road-map' && <Roadmap />
+            }
+            {activeView === 'settings' && <Settings isDarkMode={isDarkMode} themes={themes} setIsDarkMode={setIsDarkMode} setLogoImage={setLogoImage}/>}
         </main>
     )
 }
