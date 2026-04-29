@@ -1,0 +1,17 @@
+{
+  "username" : "user",
+  "password" : "$2b$10$LM2Kae...z83p0",
+  "email" : "",
+  "role" : "user",
+  "id" : "331Z_FFxLU7bPL2j5QxNT",
+  "active" : true,
+  "devices" : [
+    {
+      "name" : "localhost",
+      "ip" : "127.0.0.1",
+      "id" : "EIgsAmY-1iT8rd4wzJvih"
+    }
+  ]
+}
+
+

@@ -37,7 +37,7 @@ export default function GettingStarted(props) {
                     text: 'Clone the EmberMetrics repository from GitHub and navigate into the project directory:',
                 }],
                 code: [{
-                    code: 'git clone https://github.com/Emberalive/emberMetrics\ncd emberMetrics',
+                    code: 'git clone https://github.com/Emberalive/emberMetrics\ncd emberMetrics/',
                     language: 'bash'
                 }]
             }}/>
@@ -55,7 +55,7 @@ export default function GettingStarted(props) {
                     }
                 ],
                 code: [
-                    { code: 'npm install\nnpm run dev', language: 'bash' },
+                    { code: 'cd emberMetrics/\npm install\nnpm run dev', language: 'bash' },
                     { code: null, language: null }
                 ]
             }}/>
@@ -73,7 +73,7 @@ export default function GettingStarted(props) {
                     }
                 ],
                 code: [
-                    { code: 'cd metrics-api\nnpm install\nnpm run dev', language: 'bash' },
+                    { code: 'cd metrics-api/\nnpm install\nnpm run dev', language: 'bash' },
                     { code: null, language: null }
                 ]
             }}/>
