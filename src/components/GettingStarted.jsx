@@ -55,7 +55,7 @@ export default function GettingStarted(props) {
                     }
                 ],
                 code: [
-                    { code: 'cd emberMetrics/\npm install\nnpm run dev', language: 'bash' },
+                    { code: 'cd emberMetrics/\nnpm install\nnpm run dev', language: 'bash' },
                     { code: null, language: null }
                 ]
             }}/>
